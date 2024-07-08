@@ -11,7 +11,9 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.4"
+    "next": "14.2.4",
+    "react-uploader": "^3.43.0",
+    "uploader": "^3.48.3"
   },
   "devDependencies": {
     "typescript": "^5",
