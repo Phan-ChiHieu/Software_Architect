@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    background-color: #07071d;
+    padding: 3rem 6rem;
+}
+
+main {
+    max-width: 1000px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-block-end: 4rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    text-align: left;
+}
+
+.gallery,
+.gallery-v1,
+.gallery-v2 {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.gallery-panel {
+    flex: 1;
+    aspect-ratio: 1 / 1.5;
+    background-color: red;
+
+    /* Not 100% compatible with all browsers */
+    -webkit-box-reflect: below 4px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+
+    transition: 0.4s;
+    pointer-events: auto;
+}
+
+.gallery-panel img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery:hover>.gallery-panel {
+    transform: perspective(400px) rotateY(30deg) scale(0.8);
+}
+
+/* 
+.gallery-v1:hover > :not(:hover):
+
+    - .gallery-v1:hover: Chọn phần tử có lớp .gallery-v1 khi người dùng di chuột qua nó.
+
+    - >: Đây là bộ chọn con trực tiếp. Nó chọn tất cả các phần tử con trực tiếp của .gallery-v1.
+
+    - :not(:hover): Đây là một pseudo-class phủ định. Nó chọn tất cả các phần tử con của .gallery-v1 không đang được di chuột qua.
+    Nói cách khác, khi người dùng di chuột vào bất kỳ phần tử con nào của .gallery-v1, các phần tử con khác (không được di chuột vào) sẽ được chọn bởi bộ chọn này.
+*/
+.gallery-v1:hover> :not(:hover) {
+    /* 
+    perspective(400px): Thiết lập phối cảnh 3D cho các phép biến đổi 3D của phần tử. 400px là khoảng cách từ mắt của người xem tới mặt phẳng biến đổi (phối cảnh). Giá trị nhỏ hơn sẽ làm cho hiệu ứng 3D rõ ràng hơn.
+    rotateY(30deg): Xoay phần tử quanh trục Y một góc 30 độ, tạo ra hiệu ứng xoay trong không gian 3D, khiến phần tử trông như bị nghiêng về phía bên phải.
+    scale(0.8): Thu nhỏ phần tử xuống 80% so với kích thước ban đầu.
+    */
+    transform: perspective(400px) rotateY(30deg) scale(0.8);
+}
+
+
+
+/* ================== */
+
+.gallery-panel-v2 {
+    flex: 1;
+    aspect-ratio: 1 / 1.5;
+    background-color: red;
+
+    /* Not 100% compatible with all browsers */
+    -webkit-box-reflect: below 4px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+
+    transition: 0.4s;
+    pointer-events: auto;
+}
+
+.gallery-panel-v2 img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+.gallery:hover>.gallery-panel-v2 {
+    transform: perspective(400px) rotateY(30deg) scale(0.8);
+}
+
+.gallery-panel-v2:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.gallery-v2:hover> :not(:hover) {
+    /* 
+    perspective(400px): Thiết lập phối cảnh 3D cho các phép biến đổi 3D của phần tử. 400px là khoảng cách từ mắt của người xem tới mặt phẳng biến đổi (phối cảnh). Giá trị nhỏ hơn sẽ làm cho hiệu ứng 3D rõ ràng hơn.
+    rotateY(30deg): Xoay phần tử quanh trục Y một góc 30 độ, tạo ra hiệu ứng xoay trong không gian 3D, khiến phần tử trông như bị nghiêng về phía bên phải.
+    scale(0.8): Thu nhỏ phần tử xuống 80% so với kích thước ban đầu.
+    */
+    transform: perspective(400px) rotateY(30deg) scale(0.8);
+    margin-inline: -1.5rem;
+}
+
+
+.gallery-panel-v2:hover~.gallery-panel-v2 {
+    transform: perspective(400px) rotateY(-30deg) scale(0.8);
+}
