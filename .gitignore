@@ -2,3 +2,8 @@
 #  React-Next-App
 /1.1.Expert_FE/react-next-app/{node_modules, .env}
 /1.1.Expert_FE/react-next-app/.env
+
+# FastAPI
+/1.2.Expert_BE/FastApi/env
+/1.2.Expert_BE/FastApi/__pycache__
+/1.2.Expert_BE/FastApi/.env
