@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    background-color: #07071d;
+    padding: 3rem;
+}
+
+main {
+    max-width: 1000px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-block-end: 3rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    gap: 1rem;
+}
+
+@property --fill {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 4.5rem;
+    aspect-ratio: 1;
+    font-size: 1.75rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 1rem;
+    text-decoration: none;
+    outline: 1px solid transparent;
+    outline-offset: -8px;
+
+    background-image: linear-gradient(-135deg,
+            transparent var(--fill),
+            #fff var(--fill));
+    background-size: 100% 33.33%;
+
+    transition: 0.4s ease-in-out 0.4s;
+    transition-property: --fill, all;
+}
+
+a:hover,
+a:focus-visible {
+    --fill: 0%;
+    color: #07071d;
+    outline-color: currentColor;
+
+    background-image: linear-gradient(transparent var(--fill), #fff var(--fill));
+    transition-delay: 0s;
+}
