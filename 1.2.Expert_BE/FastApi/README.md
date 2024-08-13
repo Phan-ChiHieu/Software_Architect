@@ -209,7 +209,8 @@ async def delete_book(book_id: int):
 
 pip freeze > requirements.txt
 
+# uninstall 
+pip freeze | xargs pip uninstall -y
 ```
 
-// pip freeze | xargs pip uninstall -y
 // https://www.youtube.com/watch?v=TO4aQ3ghFOc&t=645s
