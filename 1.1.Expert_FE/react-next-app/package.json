@@ -1,6 +1,7 @@
 {
   "name": "react-next-app",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,13 +20,14 @@
     "langchain": "^0.2.8",
     "md5": "^2.3.0",
     "next": "14.2.4",
+    "next-auth": "^4.24.7",
     "pdf-parse": "1.1.1",
     "pdfjs-dist": "3.4.120",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^8.0.5",
     "react-uploader": "^3.43.0",
-    "uploader": "^3.48.3",
-    "react-markdown": "^8.0.5"
+    "uploader": "^3.48.3"
   },
   "devDependencies": {
     "@types/md5": "^2.3.5",
