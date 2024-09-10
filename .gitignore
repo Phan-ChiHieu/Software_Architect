@@ -7,3 +7,8 @@
 /1.2.Expert_BE/FastApi/env
 /1.2.Expert_BE/FastApi/__pycache__
 /1.2.Expert_BE/FastApi/.env
+
+
+# 1.4.Expect_AI
+/1.4.Expect_AI/ai-app/{node_modules, .env}
+/1.4.Expect_AI/ai-app/.env
