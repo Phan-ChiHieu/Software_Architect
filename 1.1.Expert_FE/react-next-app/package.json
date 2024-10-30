@@ -27,7 +27,8 @@
     "react-dom": "^18",
     "react-markdown": "^8.0.5",
     "react-uploader": "^3.43.0",
-    "uploader": "^3.48.3"
+    "uploader": "^3.48.3",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@types/md5": "^2.3.5",
