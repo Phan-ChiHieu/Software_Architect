@@ -3,6 +3,10 @@
 /1.1.Expert_FE/react-next-app/{node_modules, .env}
 /1.1.Expert_FE/react-next-app/.env
 
+#  software_engineer_nextjs
+/1.1.Expert_FE/software_engineer_nextjs/{node_modules, .env}
+/1.1.Expert_FE/software_engineer_nextjs/.env
+
 # FastAPI
 /1.2.Expert_BE/FastApi/env
 /1.2.Expert_BE/FastApi/__pycache__
