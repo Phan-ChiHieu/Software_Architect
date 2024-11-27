@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import ImgMountains from "public/images/mountains.jpg";
 import ImgObserver from "./img-observer";
+import Imglocalsaveidb from "./img-local-save-idb";
 
 export default function PageOptimizationWithImages() {
   return (
@@ -16,32 +17,16 @@ export default function PageOptimizationWithImages() {
         </li>
         <li className="pt-4">{"2. Đổi định dạng ảnh từ png => webp, avif"}</li>
 
-        <li className="pt-8 w-[1440px]">
+        <li className="pt-8 w-[1440px] h-[977px]">
           <p>Responsive Images Ưu tiên dùng các trường hợp là IMG Banner or Background IMG</p>
 
-          <div className="relative">
-            <Image
-              src={ImgMountains}
-              alt="Mountains-Background"
-              sizes="100vw"
-              layout="responsive"
-              placeholder="blur" //? sử dụng thuộc tính này với img được đặt trong folder public của source code
-              // loading="lazy" // ? Nếu đã dùng priority thì không dùng loading="lazy"
-              priority={true}
-              // Make image display full width
-              style={{
-                // width: "100%",
-                // height: "auto",
-                aspectRatio: "16/9",
-              }}
-            />
-          </div>
+          <Imglocalsaveidb />
         </li>
 
         <li className="pt-8">
           <p>With Image Large Mà không cần ưu tiên load trước</p>
 
-          <div className="w-[800px] h-[400px] relative">
+          {/* <div className="w-[800px] h-[400px] relative">
             <Image
               src={ImgMountains}
               alt="Mountains-Background"
@@ -54,7 +39,7 @@ export default function PageOptimizationWithImages() {
                 objectFit: "cover",
               }}
             />
-          </div>
+          </div> */}
         </li>
 
         <li className="pt-4">
