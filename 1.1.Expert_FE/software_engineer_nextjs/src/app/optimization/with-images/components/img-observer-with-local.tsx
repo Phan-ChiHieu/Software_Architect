@@ -40,6 +40,11 @@ export default function ImgObserverWithLocal() {
             placeholder={`data:image/svg+xml;base64,${toBase64(Shimmer(514, 394))}`}
             // or
             // placeholder="blur"
+            style={{
+              // Để lạo bỏ warning trong trình duyệt
+              width: "514px",
+              height: "394px",
+            }}
           />
         )}
       </div>

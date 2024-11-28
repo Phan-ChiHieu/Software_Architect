@@ -1,19 +1,93 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import ImageSkeletonLoader from "@/components/sekeletons/Image.skeleton";
 
 export default function ImgObserverWithHttps() {
   const [loading, setLoading] = useState(true);
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  // const [cachedHTML, setCachedHTML] = useState(null);
+  // const containerRef: any = useRef(null); // Ref để lấy HTML sau khi render
+
+  // // Hàm lưu HTML vào CacheStorage
+  // const saveHTMLToCache = async () => {
+  //   if ("caches" in window && containerRef.current) {
+  //     const cache = await caches.open("my-cache");
+
+  //     // Lấy HTML từ DOM
+  //     const htmlContent = containerRef.current.outerHTML;
+
+  //     // Tạo Blob để lưu HTML
+  //     const htmlBlob = new Blob([htmlContent], { type: "text/html" });
+
+  //     // Lưu vào CacheStorage
+  //     await cache.put("/cached-html", new Response(htmlBlob));
+  //     console.log("HTML has been cached!");
+  //   }
+  // };
+
+  // // Hàm tải HTML từ CacheStorage
+  // const loadHTMLFromCache = async () => {
+  //   if ("caches" in window) {
+  //     const cache = await caches.open("my-cache");
+  //     const cachedResponse = await cache.match("/cached-html");
+  //     if (cachedResponse) {
+  //       const cachedHTMLContent: any = await cachedResponse.text();
+  //       setCachedHTML(cachedHTMLContent); // Lưu HTML vào state để hiển thị
+  //     }
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   // Kiểm tra nếu đã có cache
+  //   loadHTMLFromCache();
+  // }, []);
+
+  // useEffect(() => {
+  //   if (inView) {
+  //     saveHTMLToCache();
+  //   }
+  // }, [inView]);
+
+  console.log("loading", loading);
+
   return (
+    // <div>
+    //   {cachedHTML ? ( // Nếu có nội dung cache, hiển thị nó
+    //     <div dangerouslySetInnerHTML={{ __html: cachedHTML }}></div> // Render nội dung từ cache
+    //   ) : (
+    //     <div ref={containerRef} className="w-full h-[1000px]">
+    //       <div>
+    //         <h1>ImgObserver With HTTPS</h1>
+    //       </div>
+    //       <div ref={ref} className="relative">
+    //         <>
+    //           {loading && <ImageSkeletonLoader width="514px" height="394px" />}
+    //           {inView && (
+    //             <Image
+    //               src={"https://ik.imagekit.io/factorazy/v1/file-asin.webp"}
+    //               alt="unsplash"
+    //               width={514}
+    //               height={394}
+    //               loading="lazy"
+    //               priority={true}
+    //               fetchPriority="high"
+    //               decoding="async"
+    //               onLoad={() => setLoading(false)} // Khi ảnh tải xong, set loading thành false
+    //               onError={() => setLoading(false)} // Nếu có lỗi, cũng tắt trạng thái loading
+    //             />
+    //           )}
+    //         </>
+    //       </div>
+    //     </div>
+    //   )}
+    // </div>
     <div className="w-full h-[1000px]">
       <div>
         <h1>ImgObserver With HTTPS</h1>
@@ -27,12 +101,17 @@ export default function ImgObserverWithHttps() {
               alt="unsplash"
               width={514}
               height={394}
-              loading="lazy"
+              // loading="lazy"
               priority={false}
               fetchPriority="low"
               decoding="async"
               onLoad={() => setLoading(false)} // Khi ảnh tải xong, set loading thành false
               onError={() => setLoading(false)} // Nếu có lỗi, cũng tắt trạng thái loading
+              style={{
+                // Để lạo bỏ warning trong trình duyệt
+                width: "514px",
+                height: "394px",
+              }}
             />
           )}
         </>
