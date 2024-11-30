@@ -1,19 +1,26 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import ImageSkeletonLoader from "@/components/sekeletons/Image.skeleton";
-import useImageFromDB from "@/hooks/useImageFromDB";
-import ImgBackgrounds from "public/images/background1728.avif";
+import ImageSkeletonLoader from '@/components/sekeletons/Image.skeleton';
+import useImageFromDB from '@/hooks/useImageFromDB';
+import ImgBackgrounds from 'public/images/background1728.avif';
 // import ImgMountains from "public/images/mountains1728.avif";
 
-const IMAGE_KEY = "imgBackground";
-const IMAGE_VERSION_KEY = "imgVersion"; // Key lưu phiên bản ảnh
-const CURRENT_VERSION = "v2"; // Phiên bản ảnh hiện tại
+const IMAGE_KEY = 'imgBackground';
+const IMAGE_VERSION_KEY = 'imgVersion'; // Key lưu phiên bản ảnh
+const CURRENT_VERSION = 'v1'; // Phiên bản ảnh hiện tại
+const NEW_VERSION = 'v2'; // Phiên bản ảnh mới
 
 export default function ImgBackgroundLocalSaveIdb() {
-  const { imageSrc, loading } = useImageFromDB(IMAGE_KEY, ImgBackgrounds.src, IMAGE_VERSION_KEY, CURRENT_VERSION);
+  const { imageSrc, loading } = useImageFromDB(
+    IMAGE_KEY,
+    ImgBackgrounds.src,
+    IMAGE_VERSION_KEY,
+    CURRENT_VERSION,
+    NEW_VERSION,
+  );
 
   return (
     <div className="relative w-[1728px] h-[862px]">
@@ -28,7 +35,7 @@ export default function ImgBackgroundLocalSaveIdb() {
           sizes="100vw"
           fill
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
       )}

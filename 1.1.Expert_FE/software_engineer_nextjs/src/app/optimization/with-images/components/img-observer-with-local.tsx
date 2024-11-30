@@ -11,7 +11,8 @@ const toBase64 = (str: string) => (typeof window === "undefined" ? Buffer.from(s
 
 const IMAGE_KEY = "imgGridOne";
 const IMAGE_VERSION_KEY = "imgVersionGridOne"; // Key lưu phiên bản ảnh
-const CURRENT_VERSION = "imgVersionGridOne_v1"; // Phiên bản ảnh hiện tại
+const CURRENT_VERSION = "v1"; // Phiên bản ảnh hiện tại
+const NEW_VERSION = "v2"; // Phiên bản ảnh mới
 
 export default function ImgObserverWithLocal() {
   const { ref, inView } = useInView({
@@ -19,7 +20,7 @@ export default function ImgObserverWithLocal() {
     threshold: 0.1,
   });
 
-  const { imageSrc } = useImageFromDB(IMAGE_KEY, filephotoImg.src, IMAGE_VERSION_KEY, CURRENT_VERSION);
+  const { imageSrc } = useImageFromDB(IMAGE_KEY, filephotoImg.src, IMAGE_VERSION_KEY, CURRENT_VERSION, NEW_VERSION);
 
   return (
     <div className="w-full h-[3000px]">

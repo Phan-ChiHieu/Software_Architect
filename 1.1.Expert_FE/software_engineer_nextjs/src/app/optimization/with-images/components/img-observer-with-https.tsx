@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import ImageSkeletonLoader from "@/components/sekeletons/Image.skeleton";
